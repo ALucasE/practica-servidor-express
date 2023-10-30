@@ -1,0 +1,16 @@
+{
+  "name": "practica-servidor-express",
+  "version": "1.0.0",
+  "description": "Practica de servidor node.js con Express con Argentina Programa 4.0 Epica",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Lucas E Acosta",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
