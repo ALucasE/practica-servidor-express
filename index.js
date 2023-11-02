@@ -1,9 +1,12 @@
-const express = require("express");
-const app = express();
-const { setting } = require("./src/settings/config");
-const { port } = setting();
+/*- - - - - - - - Imports - - - - - - - -*/
+import express from "express"; //const express = require("express");
+import indexRoutes from "./src/routers/index.routes.js"; //const indexRoutes = require("./src/routers/index.routes");
+import setting from "./src/settings/config.js"; //const { setting } = require("./src/settings/config");
 
-const indexRoutes = require("./src/routers/index.routes");
+/*- - - - - - - - Configuraciones - - - - - - - -*/
+const app = express();
+
+const { port } = setting();
 
 app.use("/", indexRoutes);
 // app.get("/", (req, res) => {

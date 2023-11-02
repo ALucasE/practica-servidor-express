@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Practica de servidor node.js con Express con Argentina Programa 4.0 Epica",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"

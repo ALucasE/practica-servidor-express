@@ -1,9 +1,8 @@
-const { config } = require("dotenv");
-
-require("dotenv").config();
-
+//import { config } from "dotenv"; //const { config } = require("dotenv");
+//require("dotenv").config();
+import dotenv from "dotenv";
 const NODE_ENV = "dev"; // dev || prod
-config({
+dotenv.config({
   path: `.env.${NODE_ENV}`,
 });
 
@@ -20,4 +19,5 @@ const setting = () => {
   };
 };
 
-module.exports = { setting };
+//module.exports = { setting };
+export default setting;
