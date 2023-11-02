@@ -6,18 +6,16 @@ dotenv.config({
   path: `.env.${NODE_ENV}`,
 });
 
-const setting = () => {
+const settingDotEnv = () => {
   return {
     port: process.env.PORT,
     host: process.env.HOST,
-    db: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      pass: process.env.DB_PASSWORD,
-    },
+    db_host: process.env.DB_HOST,
+    db_port: process.env.DB_PORT,
+    db_user: process.env.DB_USER,
+    db_pass: process.env.DB_PASSWORD,
   };
 };
 
 //module.exports = { setting };
-export default setting;
+export default settingDotEnv;
