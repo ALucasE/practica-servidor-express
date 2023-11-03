@@ -13,3 +13,5 @@ Las variables de entorno necesarias están declaradas en .env.example
 Se implementa la rama de develop
 
 Se implementa type module
+
+Se completa el CRUD de clientes
