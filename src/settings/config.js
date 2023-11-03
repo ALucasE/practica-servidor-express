@@ -1,23 +1,20 @@
-const { config } = require("dotenv");
-
-require("dotenv").config();
-
+/*- - - - - - - - Configuración de variables de entornos - - - - - - - -*/
+import dotenv from "dotenv";
 const NODE_ENV = "dev"; // dev || prod
-config({
+dotenv.config({
   path: `.env.${NODE_ENV}`,
 });
 
-const setting = () => {
+/*- - - - - - - - Variables de entornos tomadas de .env.dev || .env.prod - - - - - - - -*/
+const settingDotEnv = () => {
   return {
     port: process.env.PORT,
     host: process.env.HOST,
-    db: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      pass: process.env.DB_PASSWORD,
-    },
+    db_host: process.env.DB_HOST,
+    db_user: process.env.DB_USER,
+    db_pass: process.env.DB_PASSWORD,
+    db_uri: process.env.DB_URI,
   };
 };
 
-module.exports = { setting };
+export default settingDotEnv;

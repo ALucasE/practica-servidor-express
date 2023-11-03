@@ -1,15 +1,22 @@
-const express = require("express");
+/*- - - - - - - - Imports - - - - - - - -*/
+import express from "express"; //const express = require("express");
+import indexRoutes from "./src/routers/index.routes.js"; //const indexRoutes = require("./src/routers/index.routes");
+import clientRoutes from "./src/routers/client.routes.js";
+import settingDotEnv from "./src/settings/config.js"; //const { setting } = require("./src/settings/config");
+import "./src/database/db.js";
+
+/*- - - - - - - - Configuraciones - - - - - - - -*/
 const app = express();
-const { setting } = require("./src/settings/config");
-const { port } = setting();
+const { port } = settingDotEnv();
 
-const indexRoutes = require("./src/routers/index.routes");
+/*- - - - - - - - Middlewares - - - - - - - -*/
+app.use(express.json());
 
+/*- - - - - - - - Rutas - - - - - - - -*/
 app.use("/", indexRoutes);
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
+app.use("/clients", clientRoutes);
 
+/*- - - - - - - - Conexión - - - - - - - -*/
 app.listen(port, () => {
   console.log(`Servidor en ejecución en http://${process.env.HOST}:${port}`);
 });
