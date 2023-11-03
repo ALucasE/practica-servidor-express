@@ -45,6 +45,8 @@ Practica de servidor node.js con Express con Argentina Programa 4.0 Epica
 
 3. Se completa el CRUD de clientes
 
+4. Se implementa autenticación
+
 ## Licencia
 
 Este proyecto está bajo licencia de código abierto.
