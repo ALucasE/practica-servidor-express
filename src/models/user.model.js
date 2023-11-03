@@ -13,6 +13,12 @@ const userSchema = new Schema(
     password: {
       type: String,
     },
+    roles: [
+      {
+        ref: "Role",
+        type: Schema.Types.ObjectId,
+      },
+    ],
   },
   {
     timestamps: true,
