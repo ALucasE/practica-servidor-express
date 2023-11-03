@@ -1,6 +1,6 @@
-import Client from "../models/client.models.js";
+import Client from "../models/client.models.js"; //importación de modelo clientes
 
-//Buscar todos los clientes
+/*- - - - - - - - Buscar todos los clientes - - - - - - - -*/
 export const getAllClients = async (req, res) => {
   try {
     const clientes = await Client.find();
@@ -11,7 +11,7 @@ export const getAllClients = async (req, res) => {
   }
 };
 
-//Buscar un cliente por id
+/*- - - - - - - - Buscar un cliente por id - - - - - - - -*/
 export const getClientById = async (req, res) => {
   try {
     const { clientId } = req.params;
@@ -23,7 +23,7 @@ export const getClientById = async (req, res) => {
   }
 };
 
-//Crear un cliente por id
+/*- - - - - - - - Crear un cliente por id - - - - - - - -*/
 export const createClient = async (req, res) => {
   try {
     const { name, mobile } = req.body;
@@ -39,7 +39,7 @@ export const createClient = async (req, res) => {
   }
 };
 
-//Actualizar un cliente por id
+/*- - - - - - - - Actualizar un cliente por id - - - - - - - -*/
 export const updateClient = async (req, res) => {
   try {
     const { clientId } = req.params;
@@ -52,7 +52,7 @@ export const updateClient = async (req, res) => {
   }
 };
 
-//Eliminar un producto por id
+/*- - - - - - - - Eliminar un producto por id - - - - - - - -*/
 export const deleteClient = async (req, res) => {
   try {
     const { clientId } = req.params;

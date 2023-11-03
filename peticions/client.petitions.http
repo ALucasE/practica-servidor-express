@@ -11,8 +11,8 @@ POST  http://localhost:5000/clients/
 content-type: application/json
 
 {
-  "name": "test 04",
-  "mobile": 3875638604
+  "name": "test 02",
+  "mobile": 3875638602
 }
 
 
@@ -26,4 +26,4 @@ content-type: application/json
 }
 
 ### Eliminar un producto por id
-DELETE http://localhost:5000/clients/65444746b2feaa3dad3835b2
+DELETE http://localhost:5000/clients/65444795b2feaa3dad3835b6
