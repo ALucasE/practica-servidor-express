@@ -12,14 +12,14 @@ Practica de servidor node.js con Express con Argentina Programa 4.0 Epica
 
 ## Requisitos
 
-- Node.js 14.x o superior
+- Node.js 18.x o superior
 
 ## Instalación
 
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tuusuario/mi-foro-web.git
+   git clone https://github.com/ALucasE/practica-servidor-express
    ```
 
 2. Instala las dependencias:
@@ -43,9 +43,9 @@ Practica de servidor node.js con Express con Argentina Programa 4.0 Epica
 
 2. Se implementa type module
 
-3. Se completa el CRUD de clientes
+3. Se implementa el CRUD de clientes
 
-4. Se implementa autenticación
+4. Se implementa usuario y validaciones
 
 ## Licencia
 
