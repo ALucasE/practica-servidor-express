@@ -3,6 +3,7 @@ import express from "express"; //const express = require("express");
 import indexRoutes from "./src/routers/index.routes.js"; //const indexRoutes = require("./src/routers/index.routes");
 import clientRoutes from "./src/routers/client.routes.js";
 import authRouters from "./src/routers/auth.routes.js";
+import productRoutes from "./src/routers/product.routes.js";
 import settingDotEnv from "./src/settings/config.js"; //const { setting } = require("./src/settings/config");
 import "./src/database/db.js";
 import { createRole } from "./src/settings/inicial.setup.js";
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use("/", indexRoutes);
 app.use("/clients", clientRoutes);
 app.use("/users", authRouters);
+app.use("/products", productRoutes);
 
 /*- - - - - - - - Conexión - - - - - - - -*/
 app.listen(port, () => {
