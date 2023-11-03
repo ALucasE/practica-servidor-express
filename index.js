@@ -5,9 +5,11 @@ import clientRoutes from "./src/routers/client.routes.js";
 import authRouters from "./src/routers/auth.routes.js";
 import settingDotEnv from "./src/settings/config.js"; //const { setting } = require("./src/settings/config");
 import "./src/database/db.js";
+import { createRole } from "./src/settings/inicial.setup.js";
 
 /*- - - - - - - - Configuraciones - - - - - - - -*/
 const app = express();
+createRole();
 const { port } = settingDotEnv();
 
 /*- - - - - - - - Middlewares - - - - - - - -*/

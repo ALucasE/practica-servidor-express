@@ -47,6 +47,8 @@ Practica de servidor node.js con Express con Argentina Programa 4.0 Epica
 
 4. Se implementa usuario y validaciones
 
+5. Se implementan Roles (admin y user) con la posibilidad de crecimiento
+
 ## Licencia
 
 Este proyecto está bajo licencia de código abierto.

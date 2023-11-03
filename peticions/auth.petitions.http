@@ -3,7 +3,18 @@ POST  http://localhost:5000/users/signup
 content-type: application/json
 
 {
-  "username": "test104",
-  "email": "test104@gmail.com",
+  "username": "test01",
+  "email": "test01@gmail.com",
   "password": "1231234"
+}
+
+### Crear usuario con rol
+POST  http://localhost:5000/users/signup
+content-type: application/json
+
+{
+  "username": "admin01",
+  "email": "admin01@gmail.com",
+  "password": "1231234",
+  "roles": "admin"
 }

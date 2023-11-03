@@ -14,6 +14,8 @@ const settingDotEnv = () => {
     db_user: process.env.DB_USER,
     db_pass: process.env.DB_PASSWORD,
     db_uri: process.env.DB_URI,
+    db_name: process.env.DB_NAME,
+    jwtkey: process.env.JWT_KEY,
   };
 };
 
