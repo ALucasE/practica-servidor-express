@@ -53,7 +53,7 @@ export const updateClient = async (req, res) => {
   }
 };
 
-/*- - - - - - - - Eliminar un producto por id - - - - - - - -*/
+/*- - - - - - - - Eliminar un cliente por id - - - - - - - -*/
 export const deleteClient = async (req, res) => {
   try {
     const { clientId } = req.params;
