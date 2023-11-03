@@ -1,4 +1,4 @@
-/*- - - - - - - - Inicializaron de Roles en la base de datos - - - - - - - -*/
+/*- - - - - - - - Inicialización de Roles en la base de datos - - - - - - - -*/
 import Role from "../models/role.models.js";
 
 export const createRole = async () => {

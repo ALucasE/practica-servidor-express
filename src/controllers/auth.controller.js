@@ -17,7 +17,6 @@ export const signup = async (req, res) => {
     });
 
     //lógica para roles
-
     if (roles) {
       //Si viene en la petición el rol y coincide con un rol existente lo asigna
       const buscarRol = await Role.find({ name: { $in: roles } });
@@ -28,7 +27,7 @@ export const signup = async (req, res) => {
       newUser.roles = [defaultRol._id];
     }
 
-    //Se aguarda el usuario creado
+    //Se aguarda el nuevo usuario creado
     const nuevoUsuario = await newUser.save();
     const rol = await Role.findById(nuevoUsuario.roles); //Esto se puede comentar
     // Token de JWT
