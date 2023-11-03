@@ -9,5 +9,9 @@ const { getIndex, getAll } = controller;
 routes.get("/", getIndex);
 routes.get("/all", getAll);
 
+routes.get("*", (req, res) => {
+  res.status(404).send({ error: "Not found" });
+});
+
 //module.exports = routes;
 export default routes;

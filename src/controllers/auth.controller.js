@@ -1,5 +1,6 @@
 import User from "../models/user.model.js";
 import Role from "../models/role.models.js";
+import { httpError } from "./handleError.controller.js";
 import jwt from "jsonwebtoken";
 import settingDotEnv from "../settings/config.js";
 const { jwtkey } = settingDotEnv();
@@ -34,6 +35,7 @@ export const signup = async (req, res) => {
     const token = jwt.sign({ id: nuevoUsuario._id }, jwtkey, { expiresIn: "2h" });
     res.status(200).json({ msg: "El usuario se creo con éxito", token, nuevoUsuario, rol }); //Esto se puede comentar
   } catch (error) {
-    return res.status(500).json({ msg: "Error al crear usuario" });
+    httpError(res, error);
+    //return res.status(500).json({ msg: "Error al crear usuario" });
   }
 };
