@@ -1,4 +1,5 @@
 import Client from "../models/client.models.js"; //importación de modelo clientes
+import { httpError } from "./handleError.controller.js";
 
 /*- - - - - - - - Buscar todos los clientes - - - - - - - -*/
 export const getAllClients = async (req, res) => {
@@ -6,8 +7,8 @@ export const getAllClients = async (req, res) => {
     const clientes = await Client.find();
     res.json(clientes);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ msg: "Ocurrió un error al buscar clientes" });
+    httpError(res, error);
+    //return res.status(500).json({ msg: "Ocurrió un error al buscar clientes" });
   }
 };
 
@@ -18,8 +19,8 @@ export const getClientById = async (req, res) => {
     const cliente = await Client.findById(clientId);
     res.json(cliente);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ msg: "Ocurrió un error al buscar cliente" });
+    httpError(res, error);
+    //return res.status(500).json({ msg: "Ocurrió un error al buscar cliente" });
   }
 };
 
@@ -34,8 +35,8 @@ export const createClient = async (req, res) => {
     const clienteGuardado = await nuevoCliente.save();
     res.status(201).json(clienteGuardado);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ msg: "Ocurrió un error al crear cliente" });
+    httpError(res, error);
+    //return res.status(500).json({ msg: "Ocurrió un error al crear cliente" });
   }
 };
 
@@ -47,8 +48,8 @@ export const updateClient = async (req, res) => {
     const updateCliente = await Client.findByIdAndUpdate(clientId, cliente, { new: true });
     res.status(200).json(updateCliente);
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ msg: "Ocurrió un error al actualizar cliente" });
+    httpError(res, error);
+    //return res.status(500).json({ msg: "Ocurrió un error al actualizar cliente" });
   }
 };
 
@@ -59,7 +60,7 @@ export const deleteClient = async (req, res) => {
     await Client.findByIdAndDelete(clientId);
     res.status(200).json({ msg: "Cliente eliminado" });
   } catch (error) {
-    console.error(error);
-    return res.status(500).json({ msg: "Ocurrió un error al eliminar cliente" });
+    httpError(res, error);
+    //return res.status(500).json({ msg: "Ocurrió un error al eliminar cliente" });
   }
 };
