@@ -39,7 +39,7 @@ export const createClient = async (req, res) => {
   }
 };
 
-//actualizar un cliente por id
+//Actualizar un cliente por id
 export const updateClient = async (req, res) => {
   try {
     const { clientId } = req.params;
@@ -53,7 +53,7 @@ export const updateClient = async (req, res) => {
 };
 
 //Eliminar un producto por id
-export const deleteClient = async () => {
+export const deleteClient = async (req, res) => {
   try {
     const { clientId } = req.params;
     await Client.findByIdAndDelete(clientId);

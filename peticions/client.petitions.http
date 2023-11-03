@@ -1,0 +1,29 @@
+### Buscar todos los clientes
+GET http://localhost:5000/clients/
+
+
+### Buscar un cliente por id
+GET http://localhost:5000/clients/65444746b2feaa3dad3835b2
+
+
+### Crear un cliente por id
+POST  http://localhost:5000/clients/
+content-type: application/json
+
+{
+  "name": "test 04",
+  "mobile": 3875638604
+}
+
+
+### Actualizar un cliente por id
+PUT   http://localhost:5000/clients/65445598df87d16374eb8a10
+content-type: application/json
+
+{
+  "name": "test 05",
+  "mobile": 3875638605
+}
+
+### Eliminar un producto por id
+DELETE http://localhost:5000/clients/65444746b2feaa3dad3835b2
