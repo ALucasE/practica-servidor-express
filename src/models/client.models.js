@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 const clientSchema = new Schema(
   {
     name: {
@@ -12,6 +12,12 @@ const clientSchema = new Schema(
       required: true,
       trim: true,
     },
+    orders: [
+      {
+        ref: "Orders",
+        type: mongoose.Schema.Types.ObjectId,
+      },
+    ],
   },
   {
     timestamps: true,

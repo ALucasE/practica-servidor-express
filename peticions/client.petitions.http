@@ -11,8 +11,8 @@ POST  http://localhost:5000/clients/
 content-type: application/json
 
 {
-  "name": "test 02",
-  "mobile": 3875638602
+  "name": "mario",
+  "mobile": 3875638502
 }
 
 

@@ -1,0 +1,26 @@
+### Buscar todos los productos
+GET http://localhost:5000/products
+
+### Buscar todos los clientes
+GET http://localhost:5000/clients/
+
+### Crear una orden
+POST  http://localhost:5000/orders/
+content-type: application/json
+
+{
+  "clientId": "65458c740084e23442d1ee23",
+  "productId": "65456306754f9595cbe63d6b",
+  "amount": 1
+}
+
+
+### Buscar todos los pedidos
+GET http://localhost:5000/orders
+
+
+### Buscar pedido por ID
+GET http://localhost:5000/orders/6545816d9579345870790c89
+
+### Buscar pedido por ID del cliente
+GET http://localhost:5000/orders/client/65458c740084e23442d1ee23

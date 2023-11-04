@@ -4,6 +4,7 @@ import indexRoutes from "./src/routers/index.routes.js"; //const indexRoutes = r
 import clientRoutes from "./src/routers/client.routes.js";
 import authRouters from "./src/routers/auth.routes.js";
 import productRoutes from "./src/routers/product.routes.js";
+import orderRoutes from "./src/routers/order.routes.js";
 import settingDotEnv from "./src/settings/config.js"; //const { setting } = require("./src/settings/config");
 import "./src/database/db.js";
 import { createRole } from "./src/settings/inicial.setup.js";
@@ -21,6 +22,7 @@ app.use("/", indexRoutes);
 app.use("/clients", clientRoutes);
 app.use("/users", authRouters);
 app.use("/products", productRoutes);
+app.use("/orders", orderRoutes);
 
 /*- - - - - - - - Conexión - - - - - - - -*/
 app.listen(port, () => {
