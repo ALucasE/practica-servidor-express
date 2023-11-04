@@ -13,8 +13,17 @@ POST  http://localhost:5000/users/signup
 content-type: application/json
 
 {
-  "username": "admin01",
-  "email": "admin01@gmail.com",
-  "password": "1231234",
+  "username": "MarcosA",
+  "email": "marcosa@gmail.com",
+  "password": "test1234",
   "roles": "admin"
+}
+
+### Inicio de sesion
+POST  http://localhost:5000/users/signin
+content-type: application/json
+
+{
+  "email": "marcosa@gmail.com",
+  "password": "test1234"
 }
