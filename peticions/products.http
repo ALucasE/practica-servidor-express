@@ -1,6 +1,8 @@
 ### Crear un producto
 POST  http://localhost:5000/products/
 content-type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTE1Mzg2OCwiZXhwIjoxNjk5MTYxMDY4fQ.EUbhvq2DnqMEPtwlYbA0cZ8c4fd3vsp_JYtn3eGtrIg
+
 
 {
   "name": "Mantenimiento Preventivo",
@@ -12,6 +14,7 @@ content-type: application/json
 
 ### Buscar todos los productos
 GET http://localhost:5000/products
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTEzMjc3MCwiZXhwIjoxNjk5MTM5OTcwfQ.A0AROOfeAPE4z4efw_DwB3b08xFvpc17VFRQBtMop6c
 
 
 ### Buscar un producto por id

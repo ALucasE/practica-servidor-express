@@ -1,5 +1,6 @@
 import Client from "../models/client.models.js"; //importación de modelo clientes
 import { httpError } from "./handleError.controller.js";
+import { validateUnique } from "../utils/validacionUnico.js";
 
 /*- - - - - - - - Buscar todos los clientes - - - - - - - -*/
 export const getAllClients = async (req, res) => {
@@ -28,6 +29,9 @@ export const getClientById = async (req, res) => {
 export const createClient = async (req, res) => {
   try {
     const { name, mobile } = req.body;
+    //Validar cliente existente
+    if (validateUnique("Client", "mobile", mobile)) return res.status(400).json({ msg: "El cliente ingresado ya existía" });
+    //crea nuevo cliente
     const nuevoCliente = new Client({
       name,
       mobile,
