@@ -1,5 +1,6 @@
 import Products from "../models/product.models.js";
 import { httpError } from "./handleError.controller.js";
+import { validateUnique } from "../utils/validacionUnico.js";
 
 /*- - - - - - - - Buscar todos los clientes - - - - - - - -*/
 
@@ -29,6 +30,8 @@ export const getPorductsById = async (req, res) => {
 export const createPorduct = async (req, res) => {
   try {
     const { name, description, type, price } = req.body;
+    //Validar valor unico
+    if (validateUnique("Products", "name", name)) return res.status(400).json({ msg: `El ${name} ya existe` });
     const nuevoProducto = new Products({
       name,
       description,

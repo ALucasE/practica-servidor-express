@@ -5,10 +5,10 @@ import { getAllPorducts, getPorductsById, ugradePorduct, deleteProduct, createPo
 import { userAuth, isAdmin } from "../middleware/user.auth.jwt.js";
 
 /*- - - - - - - - /products - - - - - - - -*/
-productRoutes.get("/", userAuth, isAdmin, getAllPorducts);
-productRoutes.get("/:productId", getPorductsById);
-productRoutes.post("/", createPorduct);
-productRoutes.put("/:productId", ugradePorduct);
-productRoutes.delete("/:productId", deleteProduct);
+productRoutes.get("/", [userAuth], getAllPorducts);
+productRoutes.get("/:productId", [userAuth], getPorductsById);
+productRoutes.post("/", [userAuth, isAdmin], createPorduct);
+productRoutes.put("/:productId", [userAuth, isAdmin], ugradePorduct);
+productRoutes.delete("/:productId", [userAuth, isAdmin], deleteProduct);
 
 export default productRoutes;

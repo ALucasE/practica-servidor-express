@@ -11,6 +11,12 @@ const { jwtkey } = settingDotEnv();
 export const signup = async (req, res) => {
   try {
     const { username, email, password, roles } = req.body;
+
+    //validación valor único
+    const usuarioExistente = await User.findOne({ $or: [{ username }, { email }] });
+    if (usuarioExistente) return res.status(400).json({ msg: "El usuario o el email ya están registrados" });
+
+    //Se crea el usuario
     const newUser = new User({
       username,
       email,
