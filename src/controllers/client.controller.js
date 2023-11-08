@@ -6,6 +6,8 @@ import { validateUnique } from "../utils/validacionUnico.js";
 export const getAllClients = async (req, res) => {
   try {
     const clientes = await Client.find();
+    //Validación por si esta vació
+    if (clientes.length < 1) return res.sendStatus(204);
     res.json(clientes);
   } catch (error) {
     httpError(res, error);
@@ -18,6 +20,8 @@ export const getClientById = async (req, res) => {
   try {
     const { clientId } = req.params;
     const cliente = await Client.findById(clientId);
+    //Validacion por si no hay cliente
+    if (!cliente) return res.sendStatus(404);
     res.json(cliente);
   } catch (error) {
     httpError(res, error);

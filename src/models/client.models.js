@@ -25,4 +25,12 @@ const clientSchema = new Schema(
   }
 );
 
+// clientSchema.pre("save", function (next) {
+//   //ELIMINA CARACTERES ESPECIALES -> Se pueden buscar mas como regex para:
+//   if (this.isModified("name")) {
+//     this.name = this.name.replace(/[^\w\s]/g, "");
+//   }
+//   next();
+// });
+
 export default model("Client", clientSchema);

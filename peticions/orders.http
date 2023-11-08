@@ -1,26 +1,31 @@
 ### Buscar todos los productos
 GET http://localhost:5000/products
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTQwNDA1NiwiZXhwIjoxNjk5NDExMjU2fQ.uUU5i2Gf1SffzQlMn7Qag6Gm-dpUBTTplqoM2JrgrrU
 
 ### Buscar todos los clientes
 GET http://localhost:5000/clients/
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTQwNDA1NiwiZXhwIjoxNjk5NDExMjU2fQ.uUU5i2Gf1SffzQlMn7Qag6Gm-dpUBTTplqoM2JrgrrU
 
 ### Crear una orden
 POST  http://localhost:5000/orders/
 content-type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTQwNDA1NiwiZXhwIjoxNjk5NDExMjU2fQ.uUU5i2Gf1SffzQlMn7Qag6Gm-dpUBTTplqoM2JrgrrU
 
 {
   "clientId": "65458c740084e23442d1ee23",
-  "productId": "65456306754f9595cbe63d6b",
+  "productId": ["6545635b754f9595cbe63d6d", "65456306754f9595cbe63d6b"],
   "amount": 1
 }
 
 
 ### Buscar todos los pedidos
 GET http://localhost:5000/orders
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTQwNDA1NiwiZXhwIjoxNjk5NDExMjU2fQ.uUU5i2Gf1SffzQlMn7Qag6Gm-dpUBTTplqoM2JrgrrU
 
 
 ### Buscar pedido por ID
-GET http://localhost:5000/orders/6545816d9579345870790c89
+GET http://localhost:5000/orders/654ae2fadb78e1e9dee389d3
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTQwNDA1NiwiZXhwIjoxNjk5NDExMjU2fQ.uUU5i2Gf1SffzQlMn7Qag6Gm-dpUBTTplqoM2JrgrrU
 
 ### Buscar pedido por ID del cliente
 GET http://localhost:5000/orders/client/65458c740084e23442d1ee23

@@ -7,6 +7,8 @@ import { validateUnique } from "../utils/validacionUnico.js";
 export const getAllPorducts = async (rec, res) => {
   try {
     const productos = await Products.find();
+    //Valida si hay productos
+    if (productos.length < 1) return res.sendStatus(204);
     res.json(productos);
   } catch (error) {
     httpError(res, error);
@@ -19,6 +21,8 @@ export const getPorductsById = async (req, res) => {
   try {
     const { productId } = req.params;
     const producto = await Products.findById(productId);
+    //Validacion por si no hay productos
+    if (!producto) return res.sendStatus(404);
     res.json(producto);
   } catch (error) {
     httpError(res, error);

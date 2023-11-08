@@ -14,7 +14,7 @@ x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE
 
 ### Buscar todos los productos
 GET http://localhost:5000/products
-x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTEzMjc3MCwiZXhwIjoxNjk5MTM5OTcwfQ.A0AROOfeAPE4z4efw_DwB3b08xFvpc17VFRQBtMop6c
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTM2NDM0NywiZXhwIjoxNjk5MzcxNTQ3fQ.caLHlbGYzU1viOC4TkMZXTNCIpXSuCgE92jgz6QY0qg
 
 
 ### Buscar un producto por id

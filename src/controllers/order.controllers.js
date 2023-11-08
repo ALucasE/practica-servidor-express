@@ -28,8 +28,10 @@ export const createOrder = async (req, res) => {
     });
 
     await pedido.save();
+    const nuevoPedido = await pedido.populate("product", ["name", "price"]);
     await cliente.orders.push(pedido._id);
     await cliente.save();
+
     res.status(201).json(pedido);
   } catch (err) {
     httpError(res, err);
@@ -71,7 +73,9 @@ export const updateOrder = async (req, res) => {
 
 export const getAllOrders = async (req, res) => {
   try {
-    const pedidos = await Orders.find().populate("client product");
+    const pedidos = await Orders.find().populate("client", ["name"]);
+    //Valida si hay pedidos
+    if (pedidos.length < 1) return res.sendStatus(204);
     res.json(pedidos);
   } catch (err) {
     httpError(res, err);
@@ -83,11 +87,11 @@ export const getAllOrders = async (req, res) => {
 export const getOrderById = async (req, res) => {
   try {
     const { orderId } = req.params;
-    const pedido = await Orders.findById(orderId).populate("client product");
+    const pedido = await Orders.findById(orderId).populate("client product", ["name"]);
     if (!pedido) {
       return res.status(404).json({ error: "Pedido no encontrado" });
     }
-    res.json(pedidos);
+    res.json(pedido);
   } catch (err) {
     httpError(res, err);
   }

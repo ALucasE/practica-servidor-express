@@ -1,9 +1,11 @@
 ### Buscar todos los clientes
 GET http://localhost:5000/clients/
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTM5NjA0MiwiZXhwIjoxNjk5NDAzMjQyfQ.pm_9NwSmJcH7ofN2WapfNE96IJ-8yTD83yw06z-RKbE
 
 
 ### Buscar un cliente por id
-GET http://localhost:5000/clients/65444746b2feaa3dad3835b2
+GET http://localhost:5000/clients/65458c740084e23442d1ee35
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDZhN2RlZGNhMjE2OGRhNTgwY2I3ZiIsImlhdCI6MTY5OTM5NjA0MiwiZXhwIjoxNjk5NDAzMjQyfQ.pm_9NwSmJcH7ofN2WapfNE96IJ-8yTD83yw06z-RKbE
 
 
 ### Crear un cliente
