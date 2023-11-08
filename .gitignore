@@ -3,3 +3,4 @@ node_modules
 .env.dev
 package-lock.json
 practica-servidor-express.code.code-workspace
+*.code-workspace
