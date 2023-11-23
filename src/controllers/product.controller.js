@@ -35,15 +35,19 @@ export const createPorduct = async (req, res) => {
   try {
     const { name, description, type, price } = req.body;
     //Validar valor unico
-    if (validateUnique("Products", "name", name)) return res.status(400).json({ msg: `El ${name} ya existe` });
-    const nuevoProducto = new Products({
-      name,
-      description,
-      type,
-      price,
-    });
-    const productoGuardado = await nuevoProducto.save();
-    res.status(201).json(productoGuardado);
+    //if (validateUnique("Products", "name", name)) return res.status(400).json({ msg: `El ${name} ya existe` });
+    const isUnique = await validateUnique("Products", "name", name);
+    if (!isUnique) {
+      const nuevoProducto = new Products({
+        name,
+        description,
+        type,
+        price,
+      });
+      const productoGuardado = await nuevoProducto.save();
+      res.status(201).json(productoGuardado);
+    }
+    return res.status(400).json({ msg: `El ${name} ya existe` });
   } catch (error) {
     httpError(res, error);
   }

@@ -5,7 +5,7 @@ import { validateUnique } from "../utils/validacionUnico.js";
 /*- - - - - - - - Buscar todos los clientes - - - - - - - -*/
 export const getAllClients = async (req, res) => {
   try {
-    const clientes = await Client.find();
+    const clientes = await Client.find().populate("orders");
     //Validación por si esta vació
     if (clientes.length < 1) return res.sendStatus(204);
     res.json(clientes);
@@ -19,7 +19,7 @@ export const getAllClients = async (req, res) => {
 export const getClientById = async (req, res) => {
   try {
     const { clientId } = req.params;
-    const cliente = await Client.findById(clientId);
+    const cliente = await Client.findById(clientId).populate("orders");
     //Validacion por si no hay cliente
     if (!cliente) return res.sendStatus(404);
     res.json(cliente);
@@ -34,14 +34,20 @@ export const createClient = async (req, res) => {
   try {
     const { name, mobile } = req.body;
     //Validar cliente existente
-    if (validateUnique("Client", "mobile", mobile)) return res.status(400).json({ msg: "El cliente ingresado ya existía" });
-    //crea nuevo cliente
-    const nuevoCliente = new Client({
-      name,
-      mobile,
-    });
-    const clienteGuardado = await nuevoCliente.save();
-    res.status(201).json(clienteGuardado);
+    // if (validateUnique("Client", "mobile", mobile)) return res.status(400).json({ msg: "El cliente ingresado ya existía" });
+    const isUnique = await validateUnique(mobile, "mobile", "Client");
+    console.log(isUnique);
+    if (isUnique) {
+      //crea nuevo cliente
+      const nuevoCliente = new Client({
+        name,
+        mobile,
+      });
+      const clienteGuardado = await nuevoCliente.save();
+      res.status(201).json(clienteGuardado);
+    } else {
+      return res.status(400).json({ msg: "El celular ingresado ya existe" });
+    }
   } catch (error) {
     httpError(res, error);
     //return res.status(500).json({ msg: "Ocurrió un error al crear cliente" });

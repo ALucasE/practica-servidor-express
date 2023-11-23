@@ -8,7 +8,6 @@ const clientSchema = new Schema(
     },
     mobile: {
       type: Number,
-      unique: true,
       required: true,
       trim: true,
     },
